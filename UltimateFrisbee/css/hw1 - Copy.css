@@ -1,0 +1,28 @@
+
+body {
+    font: "sans-serif";
+    font-size: 125%;
+    font-weight: 500;
+}
+aside {
+    display: none;
+}
+h1 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+h2 {
+    text-transform: uppercase;
+    color: #0a16a1;
+}
+header {
+    background-color: #9e9e9ee7;
+}
+a {
+    color: rgb(0,0,0);
+    background-color: #dad9d43b;
+}
+section.right {
+    background-color: #7a7979ed;
+}
