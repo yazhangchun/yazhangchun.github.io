@@ -11,8 +11,9 @@
                 padding: 5%;
                 background: url('20210212.JPG') no-repeat fixed center;
                 background-size: 45%;
+                display: inline-block;
             }
-            div {
+            div#text {
                 position: absolute;
                 left: 50px;
                 top: 40vh;
@@ -24,9 +25,19 @@
                 text-shadow: 2px 2px 8px #FF0000;
                 line-height: 100px;
             }
+            #rose {
+                position: absolute;
+                left: 75vw;
+                top: 30vh;
+                float: right;
+            }
+            div#rose img {
+                width: 20vw;
+            }
         </style>
     </head>
     <body>
-        <div>Happy Birthday Jan!</div>
+        <div id="text">Happy Birthday Jan!</div>
+        <div id="rose"><img src='rose.jpg'></div>
     </body>
 </html>
