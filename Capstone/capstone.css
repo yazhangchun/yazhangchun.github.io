@@ -1,0 +1,9 @@
+.navbar {
+    background-color: rgb(139, 12, 12);
+}
+h2 {
+    text-align: center;
+    background-color: rgb(226, 147, 1);
+    color: white;
+    padding: 5px;
+}
