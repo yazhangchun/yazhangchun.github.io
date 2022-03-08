@@ -1,9 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    height: 45px;
+    line-height: 45px;
+    background-color: rgb(139, 12,12);
+    color: white;
+}
 .navbar {
     background-color: rgb(139, 12, 12);
+}
+.navbar a {
+    color: white;
 }
 h2 {
     text-align: center;
     background-color: rgb(226, 147, 1);
     color: white;
     padding: 5px;
+}
+h5 {
+    font: white;
 }
