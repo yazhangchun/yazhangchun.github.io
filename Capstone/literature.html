@@ -11,6 +11,54 @@
         <title>Literature</title>
         <link rel="stylesheet" href="capstone.css">
         <style>
+            #carouselContainer {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            /*-- Carousel --*/
+            @media (max-width: 575px) {
+                #carouselContainer .carousel-inner .carousel-item > div {
+                    display: none;
+                }
+                #carouselContainer .carousel-inner .carousel-item > div:first-child {
+                    display: block;
+                }
+            }
+            #carouselContainer .carousel-inner .carousel-item.active,
+            #carouselContainer .carousel-inner .carousel-item-next,
+            #carouselContainer .carousel-inner .carousel-item-prev {
+                display: flex;
+            }
+            @media (min-width: 576px) {
+                #carouselContainer .carousel-inner .carousel-item-end.active,
+                #carouselContainer .carousel-inner .carousel-item-next {
+                    transform: translateX(16.67%);
+                }
+                #carouselContainer .carousel-inner .carousel-item-start.active, 
+                #carouselContainer .carousel-inner .carousel-item-prev {
+                    transform: translateX(-16.67%);
+                }
+                #carouselContainer .carousel-item{
+                    justify-content: space-around;
+                }
+            }
+            #carouselContainer .carousel-inner .carousel-item-end,
+            #carouselContainer .carousel-inner .carousel-item-start { 
+                transform: translateX(0);
+            }
+            #carouselContainer .card{
+                border: 0;
+                /*position: relative; */
+            }
+            #carouselContainer .card img{
+                /* width: 90%; */
+                max-height: 20vh;
+            }
+            
+            /*-- Book Figures --*/
+            figcaption {
+                font-family: 'Times New Roman', Times, serif;
+            }
             figure a {
                 background-color: rgba(69, 132, 250, 0.986);
                 text-decoration: none;
@@ -21,57 +69,316 @@
                 display: inline-block;
             }
             figure img {
-                max-height: 300px;
+                max-height: 25vh;
             }
         </style>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">Home</a>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                            </svg>
+        <main>
+            <header>
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">Home</a>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </header>
+            <div class="container" id="carouselContainer">
+                <div class="row mx-auto my-auto justify-content-center">
+                    <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/ArabianNights.png" class="img-fluid" alt="Arabian Nights">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/TheOdyssey.png" class="img-fluid" alt="The Odyssey">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/TaleOfGenji.png" class="img-fluid" alt="The Tale Of Genji">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/Ficciones.png" class="img-fluid" alt="Ficciones">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/DeathAndHorseman.png" class="img-fluid" alt="Death and King's Horseman">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/Candide.png" class="img-fluid" alt="Candide">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/EastWestStories.png" class="img-fluid" alt="East,West:Stories">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="col-md-2 card">
+                                    <div class="card-img">
+                                        <img src="assets/imgs/InterpreterOfMaladies.png" class="img-fluid" alt="Interpreter Of Maladies">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
-                    </form>
+                        <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
-            </nav>
-        </header>
-        
-        <h2>Odyssey</h2>
-        <div class="container">
-            <div class="row">
-                <p class="col-md-6">Odyssey Summary</p>
-                <figure class="col-md-6">
-                    <img class="img-fluid img-thumbnail" src="TheOdyssey.png" alt="The Odyssey"/>
-                    <figcaption>The Odyssey<br>by Homer, translated by Robert Fagles<br>
-                        <a href="https://smile.amazon.com/Odyssey-Homer/dp/0140268863/">Amazon</a>
-                        <a href="http://www.boyle.kyschools.us/UserFiles/88/The%20Odyssey.pdf">Free PDF</a>
-                    </figcaption>
-                </figure>
             </div>
-        </div>
-        
-        <h2>Arabian Nights</h2>
-        <div class="container">
-            <div class="row">
-                <p class="col-md-6">One Thousand and One Nights</p>
-                <figure class="col-md-6">
-                    <img class="img-fluid img-thumbnail" src="ArabianNights.png"/>
-                    <figcaption>Abrabian Nights<br>translated by Husain Haddawy<br>
-                        <a href="https://smile.amazon.com/Arabian-Nights-New-Deluxe/dp/0393331660/">Amazon</a>
-                        <a href="https://wwnorton.com/books/9780393331660">Norton Books</a>
-                    </figcaption>
-                </figure>
+            <h2>Arabian Nights</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        The stories of The Arabian Nights (and stories within 
+                        stories, and stories within stories within stories) are 
+                        famously told by the Princess Shahrazad, under the 
+                        threat of death should the king lose interest in her 
+                        tale. Collected over the centuries from India, Persia, 
+                        and Arabia, and ranging from adventure fantasies, 
+                        vivacious erotica, and animal fables, to pointed Sufi 
+                        tales, these stories provided the daily entertainment 
+                        of the medieval Islamic world at the height of its 
+                        glory. (From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/ArabianNights.png" alt=""Arabian Nights/>
+                        <figcaption>translated by <em>Husain Haddawy</em><br>
+                            <a href="https://smile.amazon.com/Arabian-Nights-New-Deluxe/dp/0393331660/">Amazon</a>
+                            <a href="https://wwnorton.com/books/9780393331660">Norton Books</a>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
-        </div>
+            <h2>The Odyssey</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        If the Iliad is the world's greatest war epic, the Odyssey is literature's 
+                        grandest evocation of an everyman's journey through life. Odysseus' 
+                        reliance on his wit and wiliness for survival in his encounters with 
+                        divine and natural forces during his ten-year voyage home to Ithaca 
+                        after the Trojan War is at once a timeless human story and an individual 
+                        test of moral endurance. (From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/TheOdyssey.png" alt="The Odyssey"/>
+                        <figcaption>by <em>Homer</em>, translated by <em>Robert Fagles</em><br>
+                            <a href="https://smile.amazon.com/Odyssey-Homer/dp/0140268863/">Amazon</a>
+                            <a href="http://www.boyle.kyschools.us/UserFiles/88/The%20Odyssey.pdf">Free PDF</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h2>The Tale of Genji</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        Written in the eleventh century, this exquisite portrait 
+                        of courtly life in medieval Japan is widely celebrated 
+                        as the world’s first novel. Genji, the Shining Prince, 
+                        is the son of an emperor. He is a passionate character 
+                        whose tempestuous nature, family circumstances, love 
+                        affairs, alliances, and shifting political fortunes 
+                        form the core of this magnificent epic. Royall Tyler’s 
+                        superior translation is detailed, poetic, and superbly 
+                        true to the Japanese original while allowing the modern 
+                        reader to appreciate it as a contemporary treasure. 
+                        (From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/TaleOfGenji.png" alt="The Tale of Genji"/>
+                        <figcaption>by <em>Murasaki Shikibu</em>, translated by <em>Royall Tyler</em><br>
+                            <a href="https://www.amazon.com/Tale-Genji-Penguin-Classics-Deluxe/dp/014243714X">Amazon</a>
+                            <a href="https://archive.org/stream/manga_Genji_Monogatari/The%20Tale%20of%20Genji%20%5BOxford%5D_djvu.txt">Public Version</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h2>Ficciones</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        Borges sends us on a journey into a 
+                        compelling, bizarre, and profoundly resonant realm; 
+                        we enter the fearful sphere of Pascal’s abyss, the 
+                        surreal and literal labyrinth of books, and the 
+                        iconography of eternal return. More playful and 
+                        approachable than the fictions themselves are Borges’s 
+                        Prologues, brief elucidations that offer the uninitiated 
+                        a passageway into the whirlwind of Borges’s genius and 
+                        mirror the precision and potency of his intellect and 
+                        inventiveness, his piercing irony, his skepticism, and 
+                        his obsession with fantasy.
+                        (From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/Ficciones.png" alt="Ficciones"/>
+                        <figcaption>by <em>Jorge Luis Borges</em><br>
+                            <a href="https://www.amazon.com/Ficciones-Jorge-Luis-Borges/dp/0802130305">Amazon</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h2>Death and the King's Horseman</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        A Nobel Prize-winning playwright's classic tale of tragic
+                        decisions in a traditional African culture.
+                        Based on events that took place in Oyo, an ancient Yoruba
+                        city of Nigeria, in 1946, Wole Soyinka's powerful play 
+                        concerns the intertwined lives of Elesin Oba, the king's 
+                        chief horseman; his son, Olunde, now studying medicine 
+                        in England; and Simon Pilkings, the colonial district 
+                        officer. The king has died and Elesin, his chief 
+                        horseman, is expected by law and custom to commit 
+                        suicide and accompany his ruler to heaven. The stage is 
+                        set for a dramatic climax when Pilkings learns of the 
+                        ritual and decides to intervene and Elesin's son arrives 
+                        home.
+                        (From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/DeathAndHorseman.png" alt="Death and the King's Horseman"/>
+                        <figcaption>by <em>Wole Soyinka</em><br>
+                            <a href="https://www.amazon.com/Death-Kings-Horseman-Wole-Soyinka/dp/0393322998">Amazon</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h2>Candide</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        Candide is Voltaire's 1759 satirical masterpiece, wreaking 
+                        havoc on the excesses of 18th century French Enlightenment 
+                        culture. The story begins with our protagonist Candide, a 
+                        young man living a sheltered life in an Edenic paradise and 
+                        being indoctrinated with Leibnizian optimism by his mentor, 
+                        Professor Pangloss. This idyllic life is abruptly interrupted, 
+                        however, by a series of painfully disillusioning events that 
+                        set him off on a wide-ranging journey. (From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/Candide.png" alt="Candide"/>
+                        <figcaption>by <em>Voltaire</em><br>
+                            <a href="https://smile.amazon.com/Candide-Voltaire/dp/1087113490">Amazon</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h2>East, West: Stories</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        From the Booker Prize-winning author of The Satanic Verses 
+                        comes nine stories that reveal the oceanic distances and 
+                        the unexpected intimacies between East and West. Daring, 
+                        extravagant, comical and humane, this book renews Rushdie's 
+                        stature as a storyteller who can enthrall and instruct us 
+                        with the same sentence.(From Amazon)
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/EastWestStories.png" alt="East,West:Stories"/>
+                        <figcaption>by <em>Salman Rushdie</em><br>
+                            <a href="https://www.amazon.com/East-West-Stories-Salman-Rushdie/dp/0679757899">Amazon</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h2>Interpreter of Maladies</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">
+                        Winner of the Pulitzer Prize for fiction, this stunning 
+                        debut collection unerring charts the emotional journeys 
+                        of characters seeking love beyond the barriers of nations 
+                        and generations. In stories that travel from India to 
+                        America and back again, Lahiri speaks with universal 
+                        eloquence to everyone who has ever felt like a foreigner.
+                    </p>
+                    <figure class="col-sm-4">
+                        <img class="img-fluid img-thumbnail" src="assets/imgs/InterpreterOfMaladies.png" alt="Interpreter of Maladies"/>
+                        <figcaption>by <em>Jhumpa Lahiri</em><br>
+                            <a href="https://www.amazon.com/Interpreter-Maladies-Jhumpa-Lahiri/dp/039592720X">Amazon</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </main>
 
+        <footer>
+            <div>&copy;Life Enthusiasts Club</div>
+            <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-twitter" viewBox="0 0 20 20">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg>
+            <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-facebook" viewBox="0 0 20 20">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg>
+            <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope" viewBox="0 0 20 20">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
+        </footer>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
         <!-- Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+        <script>
+            let items = document.querySelectorAll('#carouselContainer .carousel .carousel-item');
+            items.forEach((el) => {
+                var minPerSlide = 6
+                let next = el.nextElementSibling
+                for (var i=1; i<minPerSlide; i++) {
+                    if (!next) {
+                        // wrap carousel by using first child
+                        next = items[0]
+                    }
+                    let cloneChild = next.cloneNode(true)
+                    el.appendChild(cloneChild.children[0])
+                    next = next.nextElementSibling
+                }
+            })
+            $(document).ready(function(){
+                $('#featureCarousel').carousel({interval: 4000});
+                $('#featureCarousel').carousel('pause');
+            });
+        </script>
     </body>
 </html>
-
