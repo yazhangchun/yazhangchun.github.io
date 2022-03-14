@@ -15,29 +15,165 @@
                 width: 100%;
                 height: 100%;
             }
+            .img-thumbnail:hover {
+                cursor: zoom-in;
+            }
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: black;
+            }
+            .modal-content {
+              position: relative;
+              /* background-color: #fefefe; */
+              margin: auto;
+              padding: 0;
+              width: 90%;
+              max-width: 1200px;
+            }
+            /* The Close "Button" */
+            .close {
+              color: white;
+              position: absolute;
+              top: 10px;
+              right: 25px;
+              font-size: 35px;
+              font-weight: bold;
+            }
+            .close:hover,
+            .close:focus {
+              color: #999;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            .slides {
+              display: none;
+            }
+            .slides > img {
+                width: 50%;
+                margin: 0 25%;
+            }
+            /* Next & previous buttons */
+            .prev,
+            .next {
+              cursor: pointer;
+              position: absolute;
+              top: 40%;
+              width: auto;
+              margin-top: -35px; /* puts it above caption */
+              color: black;
+              font-weight: bold;
+              font-size: 20px;
+              transition: 0.6s ease;
+              user-select: none;
+              text-decoration: none;
+              -webkit-user-select: none;
+            }
+            .next {
+              right: 0;
+            }
+            .prev:hover,
+            .next:hover {
+              color: #999;
+            }
+            .numbertext {
+              color: #f2f2f2;
+              font-size: 12px;
+              padding: 8px 12px;
+              position: absolute;
+              top: 0;
+            }
+            /* Caption text */
+            .caption-container {
+              text-align: center;
+              background-color: black;
+              padding: 2px 16px;
+              color: white;
+            }
+            .thumbControl > img {
+                max-width: 100%;
+            }
+            img.yosemiteDemo, img.sunolDemo, img.muirwoodsDemo {
+              opacity: 0.6;
+            }
+            img.active,
+            .demo:hover {
+              opacity: 1;
+            }
         </style>
+        <script>
+            function openModal(name) {
+                document.getElementById(name+"Modal").style.display = "block";
+            }
+            function closeModal(name) {
+                document.getElementById(name+"Modal").style.display = "none";
+            }
+            var slideIndex = 1;
+            //showSlides(slideIndex);
+            function plusSlides(name, n) {
+                showSlides(name, slideIndex += n);
+            }
+            function currentSlide(name, n) {
+                showSlides(name, slideIndex = n);
+            }
+            function showSlides(name, n) {
+                var i;
+                var slides = document.getElementsByClassName(name+"Slides");
+                var dots = document.getElementsByClassName(name+"Demo");
+                var captionText = document.getElementById(name+"Caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>
     </head>
     <body>
         <main>
             <header>
-                <nav class="navbar">
+                <nav class="navbar navbar-expand-sm">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="index.html">Home</a>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                </svg>
-                            </button>
-                        </form>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                  </svg>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li><a class="nav-link" href="literature.html">Literature</a></li>
+                                <li><a class="nav-link" href="music.html">Music</a></li>
+                                <li><a class="nav-link" href="cooking.html">Cooking</a></li>
+                                <li><a class="nav-link" href="hiking.html">Hiking</a></li>
+                                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </header>
 
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <h5>Yosemite National Park</h5>
                         Tioga Rd Hwy 120 &amp; Hwy 140<br/>
                         Yosemite National Park, CA 95389<br/>
@@ -45,21 +181,22 @@
                         <a href="https://www.nps.gov/yose/index.htm">More Information</a>
                         </p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d403237.0378019647!2d-119.83129329231473!3d37.85351939505258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8096f09df58aecc5%3A0x2d249c2ced8003fe!2sYosemite%20National%20Park!5e0!3m2!1sen!2sus!4v1646610981753!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <div class="col-4">
-                        <div class="row">
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite1.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite2.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite3.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite4.JPG"/>
-                        </div>
+                    <div class="col-md-4">
+                      <div class="row">
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite1.JPG" onclick="openModal('yosemite');currentSlide('yosemite',1)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite2.JPG" onclick="openModal('yosemite');currentSlide('yosemite',2)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite3.JPG" onclick="openModal('yosemite');currentSlide('yosemite',3)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Yosemite4.JPG" onclick="openModal('yosemite');currentSlide('yosemite',4)"/>
+                      </div>
+                      <p>Click to see larger photos.</p>
                     </div>
                 </div>
                 <hr/>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <h5>Muir Woods National Monument</h5>
                         1 Muir Woods Rd<br/>
                         Mill Valley, CA 94941<br/>
@@ -67,21 +204,22 @@
                         <a href="https://www.nps.gov/muwo/index.htm">More Information</a>
                         </p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12594.520961831777!2d-122.57174072833551!3d37.89232909969195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808591b4bd6762ad%3A0x7aff587668ffaff9!2sMuir%20Woods%20National%20Monument!5e0!3m2!1sen!2sus!4v1645473853231!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="row">
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods1.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods2.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods3.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods4.JPG"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods1.JPG" onclick="openModal('muirwoods');currentSlide('muirwoods',1)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods2.JPG" onclick="openModal('muirwoods');currentSlide('muirwoods',2)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods3.JPG" onclick="openModal('muirwoods');currentSlide('muirwoods',3)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/muir_woods4.JPG" onclick="openModal('muirwoods');currentSlide('muirwoods',4)"/>
                         </div>
+                        <p>Click to see larger photos.</p>
                     </div>
                 </div>
                 <hr/>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <h5>Sunol Regional Wilderness</h5>
                         1895 Geary Rd<br/>
                         Sunol, CA 94586<br/>
@@ -89,27 +227,172 @@
                         <a href="https://www.ebparks.org/parks/sunol">More Information</a>
                         </p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.6998804893515!2d-121.83326088452355!3d37.51499603483546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc510a69423cb%3A0xa70fadb88893fcf8!2sSunol%20Regional%20Wilderness!5e0!3m2!1sen!2sus!4v1646610096183!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="row">
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Sunol1.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Sunol2.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Sunol3.JPG"/>
-                        <img class="col-6 img-fluid img-thumbnail" src="assets/imgs/Sunol4.JPG"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Sunol1.JPG" onclick="openModal('sunol');currentSlide('sunol',1)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Sunol2.JPG" onclick="openModal('sunol');currentSlide('sunol',2)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Sunol3.JPG" onclick="openModal('sunol');currentSlide('sunol',3)"/>
+                        <img class="col-3 col-md-6 img-fluid img-thumbnail" src="assets/imgs/Sunol4.JPG" onclick="openModal('sunol');currentSlide('sunol',4)"/>
+                        </div>
+                        <p>Click to see larger photos.</p>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+
+            <div id="yosemiteModal" class="modal">
+                <span class="close cursor" onclick="closeModal('yosemite')">&times;</span>
+                <div class="modal-content">
+                    <div class="slides yosemiteSlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="assets/imgs/Yosemite1.JPG">
+                    </div>
+                    <div class="slides yosemiteSlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="assets/imgs/Yosemite2.JPG">
+                    </div>
+                    <div class="slides yosemiteSlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="assets/imgs/Yosemite3.JPG">
+                    </div>
+                    <div class="slides yosemiteSlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="assets/imgs/Yosemite4.JPG">
+                    </div>
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides('yosemite',-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides('yosemite',1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="yosemiteCaption">This is caption.</p>
+                    </div>
+
+                    <!-- Thumbnail image controls -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3 thumbControl">
+                                <img class="yosemiteDemo img-fluid" src="assets/imgs/Yosemite1.JPG" onclick="currentSlide('yosemite',1)" alt="Yosemite Picture 1"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="yosemiteDemo img-fluid" src="assets/imgs/Yosemite2.JPG" onclick="currentSlide('yosemite',2)" alt="Yosemite Picture 2"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="yosemiteDemo img-fluid" src="assets/imgs/Yosemite3.JPG" onclick="currentSlide('yosemite',3)" alt="Yosemite Picture 3"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="yosemiteDemo img-fluid" src="assets/imgs/Yosemite4.JPG" onclick="currentSlide('yosemite',4)" alt="Yosemite Picture 4"/>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="modalYosemite" class="modal">
-                
+            <div id="muirwoodsModal" class="modal">
+                <span class="close cursor" onclick="closeModal('muirwoods')">&times;</span>
+                <div class="modal-content">
+                    <div class="slides muirwoodsSlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="assets/imgs/muir_woods1.JPG">
+                    </div>
+                    <div class="slides muirwoodsSlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="assets/imgs/muir_woods2.JPG">
+                    </div>
+                    <div class="slides muirwoodsSlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="assets/imgs/muir_woods3.JPG">
+                    </div>
+                    <div class="slides muirwoodsSlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="assets/imgs/muir_woods4.JPG">
+                    </div>
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides('muirwoods',-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides('muirwoods',1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="muirwoodsCaption">This is caption.</p>
+                    </div>
+
+                    <!-- Thumbnail image controls -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3 thumbControl">
+                                <img class="muirwoodsDemo img-fluid" src="assets/imgs/muir_woods1.JPG" onclick="currentSlide('muirwoods',1)" alt="Muir Woods Picture 1"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="muirwoodsDemo img-fluid" src="assets/imgs/muir_woods2.JPG" onclick="currentSlide('muirwoods',2)" alt="Muir Woods Picture 2"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="muirwoodsDemo img-fluid" src="assets/imgs/muir_woods3.JPG" onclick="currentSlide('muirwoods',3)" alt="Muir Woods Picture 3"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="muirwoodsDemo img-fluid" src="assets/imgs/muir_woods4.JPG" onclick="currentSlide('muirwoods',4)" alt="Muir Woods Picture 4"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sunolModal" class="modal">
+                <span class="close cursor" onclick="closeModal('sunol')">&times;</span>
+                <div class="modal-content">
+                    <div class="slides sunolSlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="assets/imgs/Sunol1.JPG">
+                    </div>
+                    <div class="slides sunolSlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="assets/imgs/Sunol2.JPG">
+                    </div>
+                    <div class="slides sunolSlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="assets/imgs/Sunol3.JPG">
+                    </div>
+                    <div class="slides sunolSlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="assets/imgs/Sunol4.JPG">
+                    </div>
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides('sunol',-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides('sunol',1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="sunolCaption">This is caption.</p>
+                    </div>
+
+                    <!-- Thumbnail image controls -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3 thumbControl">
+                                <img class="sunolDemo img-fluid" src="assets/imgs/Sunol1.JPG" onclick="currentSlide('sunol',1)" alt="Sunol Picture 1"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="sunolDemo img-fluid" src="assets/imgs/Sunol2.JPG" onclick="currentSlide('sunol',2)" alt="Sunol Picture 2"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="sunolDemo img-fluid" src="assets/imgs/Sunol3.JPG" onclick="currentSlide('sunol',3)" alt="Sunol Picture 3"/>
+                            </div>
+                            <div class="col-3 thumbControl">
+                                <img class="sunolDemo img-fluid" src="assets/imgs/Sunol4.JPG" onclick="currentSlide('sunol',4)" alt="Sunol Picture 4"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         
         <footer>
-            <div>&copy;Life Enthusiasts Club</div>
+            <div>&copy;The Life Savor's Club</div>
             <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-twitter" viewBox="0 0 20 20">
                 <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
             </svg>
@@ -125,3 +408,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
     </body>
 </html>
+

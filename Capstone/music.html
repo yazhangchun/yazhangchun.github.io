@@ -7,37 +7,156 @@
         
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="capstone.css">
+        <title>Music</title>
+
+        <style>
+            a > img {
+                width: 300px;
+                height: 200px;
+                margin-bottom: 5px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Music</h1>
-        <h2>Ava Maria</h2>
-        <div class="container">
-            <div class="row">
-                <p class="col-md-6">The song was composed by Franz Schubert in 1825, originally written for 
-        Sir Walter Scott's poem <em>The Lady Of The Lake</em>. It later became
-        a song for prayer to Virgin Mary.</p>
-                <video class="col-md-6" src="" controls>
-                    Video for Ava Maria.
-                </video>
-            </div>
-        </div>
+        <main>
+            <header>
+                <nav class="navbar navbar-expand-sm">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">Home</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                  </svg>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li><a class="nav-link" href="literature.html">Literature</a></li>
+                                <li><a class="nav-link" href="music.html">Music</a></li>
+                                <li><a class="nav-link" href="cooking.html">Cooking</a></li>
+                                <li><a class="nav-link" href="hiking.html">Hiking</a></li>
+                                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
         
-        <h2>Botany Bay</h2>
-        <div class="container">
-            <div class="row">
-                <p class="col-md-6">A classic Australian folk song tracing its origin back to at least 1820.
-        Botany Bay was synonymous with convicts from Old England transported to
-        Australia. They explain their circumstances and their love
-        for their Old England home and the people left behind, and issue warning
-        to boys and girls not to steal.</p>
-                <video class="col-md-6" src="../../Music/botany_bay.mp4" controls>
-                    Video for Botany Bay.
-                </video>
+            <h2>Ava Maria</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">The song was composed by Franz Schubert in 1825, originally written for 
+            Sir Walter Scott's poem <em>The Lady Of The Lake</em>. It later became
+            a song for prayer to Virgin Mary.</p>
+                    <div class="col-sm-4">
+                        <a href="https://www.youtube.com/watch?v=ek9LKDjgshU">
+                            <img src="assets/imgs/AvaMaria.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+            
+            <h2>Botany Bay</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">A classic Australian folk song tracing its origin back to at least 1820.
+            Botany Bay was synonymous with convicts from Old England transported to
+            Australia. They explain their circumstances and their love
+            for their Old England home and the people left behind, and issue warning
+            to boys and girls not to steal.</p>
+                    <div class="col-sm-4">
+                        <a href="https://www.youtube.com/watch?v=2aRphHs6B8w">
+                            <img src="assets/imgs/BotanyBay.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            <h2>Scarborough Fair</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">"Scarborough Fair" popularized in the United States 
+                        by the 1960s singer-songwriting duo Simon & Garfunkel, is an English 
+                        folk song about a market fair that took place in the town of 
+                        Scarborough in Yorkshire during medieval times. Like any fair, it 
+                        attracted traders, entertainers and food vendors, along with other 
+                        hangers-on. The fair peaked in the late 14th century but continued 
+                        to operate until the end of the 1700s. Now, several fairs are held 
+                        in remembrance of the original.</p>
+                    <div class="col-sm-4">
+                        <a href="https://www.youtube.com/watch?v=RuqeA6nD0fI"><img src="assets/imgs/ScarBoroughFair.png"/></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- h2>Bohemian Rhapsody</h2>
+            <div class="container">
+                <div class="row">
+                    <p class="col-sm-8">Blah</p>
+                    <div class="col-sm-4">
+                        <iframe width="320" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                    </div>
+                </div>
+            </div -->
+        </main>
+        
+        <footer>
+            <div>&copy;The Life Savor's Club</div>
+            <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-twitter" viewBox="0 0 20 20">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg>
+            <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-facebook" viewBox="0 0 20 20">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg>
+            <svg class="col-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope" viewBox="0 0 20 20">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
+        </footer>
+        
         <!-- Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+        <script>
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var scarboroughFairPlayer;
+            function onYouTubeIframeAPIReady() {
+                scarboroughFairPlayer = new YT.Player('scarboroughFairPlayer', {
+                    height: '200',
+                    width: '300',
+                    videoId: 'wiZJP_XLmrQ', /*'-Jj4s9I-53g'*/
+                    playerVars: {
+                        'playsinline': 1
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    setTimeout(stopVideo, 6000);
+                    done = true;
+                }
+            }
+            function stopVideo() {
+                scarboroughFairPlayer.stopVideo();
+            }
+        </script>
+        
     </body>
 </html>
 
