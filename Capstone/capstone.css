@@ -3,7 +3,7 @@
 }
 body {
     display: flex;
-    min-height: 98vh;
+    min-height: 99vh;
     flex-direction: column;
     margin: 0;
     padding: 0;
