@@ -12,8 +12,19 @@
         <link rel="stylesheet" href="capstone.css">
         <style>
             iframe {
+                width: 100%;
                 margin: 0 20px 10px 10px;
                 border: 1px solid gray;
+            }
+            img {
+                max-width: 100%;
+                max-height: 200px;
+            }
+            .description {
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .ingredients, .directions {
+                font-size: 80%;
             }
         </style>
     </head>
@@ -46,12 +57,89 @@
             </header>
             
             <h2>Anthony Bourdain's Boeuf Bourguignon</h2>
-            <iframe src="assets/BoeufBourguignon.pdf#toolbar=0" max-width=500 height=400>
-            </iframe>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src="assets/imgs/Beef.JPEG" alt="Boeuf Bourguignon"/>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="description">Anthony Bourdain's take on the classic dish of beef braised in red wine requires time, but no complicated ingredients or
+                            techniques. The reward: a satisfying, hearty stew in which the tender meat and rich, silken sauce are the stars.
+                            As Bourdain writes in his "Les Halles Cookbook": "This dish is much better the second day. Just cool the stew down in an ice
+                            bath, or on your countertop (the Health Department is unlikely to raid your kitchen). Refrigerate overnight. When time, heat
+                            and serve. Goes well with a few boiled potatoes. But goes really well with a bottle of Cote de Nuit Villages Pommard."
+                            Make Ahead: For best flavor, this dish should be made 1 day in advance. The stew will keep up to 3 days in the refrigerator
+                            and 2 to 3 months in the freezer. Thaw in the refrigerator or microwave and finish heating on the stove top.
+                            Where to Buy: Demi-glace is a concentrated sauce typically made with a meat stock and sometimes wine; it is available in the
+                            soup aisle of large grocery stores.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients">
+                            <li>2 pounds boneless beef shoulder or neck (chuck), cut into 1 1/2-inch pieces</li>
+                            <li>Kosher salt</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1/4 cup olive oil, divided</li>
+                            <li>4 medium onions, halved and thinly sliced</li>
+                            <li>2 tablespoons all-purpose flour</li>
+                            <li>1 cup red burgundy wine (such as pinot noir)</li>
+                            <li>6 medium carrots, peeled and cut into 1-inch pieces</li>
+                            <li>1 clove garlic</li>
+                            <li>1 bouquet garni (a tied bundle of herbs, typically thyme, bay and parsley)</li>
+                            <li>Water</li>
+                            <li>Demi-glace (optional; see headnote)</li>
+                            <li>Chopped fresh flat-leaf parsley, for garnish</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-8">
+                        <h3>Directions</h3>
+                        <p class="directions">
+                            Thoroughly pat the meat dry with paper towels and generously 
+                            season it with salt and pepper. In a Dutch oven over high heat, 
+                            heat half of the oil until shimmering. Working in several batches,
+                            and without moving the meat much, sear the meat on all sides 
+                            until well browned, adding more oil as needed. (If you try to 
+                            cook too much meat at once, it will steam and turn gray instead 
+                            of brown.) Once the meat is well browned, transfer to a plate.
+                            <br/>
+                            Reduce the heat to medium-high and add the onions and any 
+                            remaining oil to the pot. Cook, stirring from time to time, 
+                            until the onions have softened and turn golden, about 10 minutes. 
+                            Sprinkle the flour on top and cook, stirring occasionally, 
+                            until thickened, 4 to 5 minutes. Add the wine and, using a wooden 
+                            spoon, stir, scraping up all the browned bits (fond) off the 
+                            bottom of the pot. 
+                            <br/>
+                            Once the wine starts to boil, return the meat 
+                            and its accumulated juices to the pot, and add the carrots, 
+                            garlic and the bouquet garni. Add 1 1/2 cups of water (and about 
+                            2 tablespoons of demi-glace, if you have it). Bring to a boil, 
+                            then reduce the heat to medium-low and cook, uncovered, until 
+                            the meat is tender, 2 to 2 1/2 hours, skimming off any foam or 
+                            oil that might accumulate on the surface. Check on the stew every 
+                            15 to 20 minutes, stirring and scraping the bottom of the pot 
+                            to prevent scorching or sticking. As you check on the stew, 
+                            continue adding 1/4 cup to 1/2 cup water, as needed, up to 2 
+                            1/2 to 3 cups total — to ensure there is enough liquid to cook 
+                            down and concentrate. If the stew begins to stick, reduce the 
+                            heat to low. The onions should fall apart, creating a thick, 
+                            rich sauce that coats the meat. 
+                            <br/>
+                            When the stew is done, discard 
+                            the bouquet garni, taste the stew and season with more salt, if 
+                            desired. Garnish with the chopped parsley and serve.
+                        </p>
+                    </div>
+                </div>
+            </div>
             
             <h2>General Zuo's Chicken</h2>
-            <iframe src="assets/GeneralZuoChicken.pdf#toolbar=0" max-width=500 height=400>
-            </iframe>
+            <div>
+                <iframe src="assets/GeneralZuoChicken.pdf#toolbar=1" height="400" allowfullscreen></iframe>
+            </div>
         </main>
         
         <footer>
