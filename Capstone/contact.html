@@ -15,10 +15,6 @@
             color: black;
             padding: 10px;
           }
-          #formArea {
-            position: fixed;
-            right: 0;
-          }
           #postedComments > div {
             background-color: rgb(212,212,212);
             padding: 10px;
@@ -89,15 +85,12 @@
         </header>
 
         <h1>Like the website? Please leave a comment!</h1>
-        <p id="notice">Since the website currently lacks a backend, the comments you post 
+        <p id="notice">Note: At the moment the website lacks a backend, so the comments you post 
           will only be visible to yourself. But don't lose heart, write and post away!
         </p>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-7" id="postedComments">
-                    <h2>Posted comments:</h2>
-                </div>
-                <div class="col-5" id="formArea">
+                <div class="col-md-5" id="formArea">
                     <form>
                         <label for="comment">Your comment</label><br/>
                         <textarea id="comment" name="comment" rows="5" cols="30"></textarea>
@@ -111,6 +104,9 @@
                         <input type="button" value="Post" onclick="postComment()">
                         <input type="reset" value="Clear">
                     </form>
+                </div>
+                <div class="col-md-7" id="postedComments">
+                  <h2>Posted comments:</h2>
                 </div>
             </div>
         </div>
