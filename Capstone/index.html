@@ -4,8 +4,6 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" /-->
-        <!--link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet"/-->
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="capstone.css"/>
 
@@ -14,11 +12,15 @@
             body {
                 background-color: rgba(92, 92, 92, 0.4);
             }
+            div {
+                display: inline-block;
+            }
             .div1, .div2, .div3, .div4 {
                 box-sizing: border-box;
                 width: 100vw;
                 height: 22vh;
-                margin: 0;
+                margin-top: 0.5vh;
+                margin-bottom: 0.5vh;
                 padding: 0;
             }
             .div11, .div12, .div13,
@@ -30,7 +32,7 @@
             .div14, .div23, .div32, .div41 {
                 width: 50vw;
                 height: 22vh;
-                margin: 0 auto;
+                margin: 0 25vw;
                 border: 1pt solid gray;
                 background-color: rgba(255, 228, 196, 0.7);
             }
@@ -51,10 +53,10 @@
                 background-size: cover;
             }
             .div14x, .div23x, .div32x, .div41x {
-                width: 44vw;
+                width: 42vw;
                 height: 18vh;
                 background-color: rgba(240,248,255,0.7);
-                margin: 2vh auto;
+                margin: 2vh;
                 vertical-align: middle;
                 text-align: center;
                 font-family: Lobster;
@@ -86,18 +88,23 @@
                 .div31, .div32, .div33, .div34,
                 .div41, .div42, .div43, .div44 {
                     display: inline-block;
-                    width: 23vw;
-                    height: 21vh;
+                    width: 22vw;
+                    height: 22vh;
                     margin: 0;
                     padding: 0;
                 }
+                .div14, .div23, .div32, .div41, .div33, .div34, .div43, .div44 {
+                    position: relative;
+                    left: 0px;
+                    top: -12vh;
+                }
                 .div14x, .div23x, .div32x, .div41x {
-                    width: 20vw;
-                    height: 15vh;
-                    margin: 3vh auto;
+                    width: 18vw;
+                    height: 18vh;
+                    margin: 2vh;
                 }
                 div a {
-                    line-height: 15vh;
+                    line-height: 18vh;
                 }
             }
         </style>
