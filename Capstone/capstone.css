@@ -22,7 +22,12 @@ footer {
     background-color: rgb(54, 85, 54);
     color: white;
 }
+footer > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .navbar {
+    display: flex;
     background-color: rgb(54,85,54);
 }
 .navbar a {
@@ -35,6 +40,9 @@ footer {
     color: white;
     border: 1px solid white;
     border-radius: 50%;
+}
+#navbarNav {
+    justify-content: flex-end;
 }
 h1 {
     text-align: center;
