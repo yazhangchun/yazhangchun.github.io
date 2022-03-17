@@ -49,19 +49,19 @@
                 backface-visibility: hidden;
                 -webkit-backface-visibility: hidden;
             }
-            .div14x > .card_face_front {
+            #div14x > .card_face_front {
                 background-image: url('assets/imgs/literature.jfif');
                 background-size: cover;
             }
-            .div23x > .card_face_front {
+            #div23x > .card_face_front {
                 background-image: url('assets/imgs/music.jfif');
                 background-size: cover;
             }
-            .div32x > .card_face_front {
+            #div32x > .card_face_front {
                 background-image: url('assets/imgs/cooking.jfif');
                 background-size: cover;
             }
-            .div41x > .card_face_front {
+            #div41x > .card_face_front {
                 background-image: url('assets/imgs/hiking.jpg');
                 background-size: cover;
             }
@@ -77,7 +77,7 @@
             .card_face_back {
                 line-height: 22vh;
             }
-            .card:hover {
+            .card.is-flipped {
                 transform: rotateY(180deg);
             }
             div a {
@@ -106,6 +106,12 @@
                 }
             }
         </style>
+        <script>
+            function flip(name) {
+                var card = document.getElementById('div'+name+'x');
+                card.classList.toggle('is-flipped');
+            }
+        </script>
     </head>
     <body>
         <main>
@@ -114,7 +120,7 @@
                 <div class="div12"></div>
                 <div class="div13"></div>
                 <div class="div14 scene">
-                    <div class="div14x card">
+                    <div id="div14x" class="card" onclick="flip('14')">
                         <div class="card_face card_face_front"></div>
                         <div class="card_face card_face_back">
                             <a href="literature.html">Literature</a>
@@ -126,7 +132,7 @@
                 <div class="div21"></div>
                 <div class="div22"></div>
                 <div class="div23 scene">
-                    <div class="div23x card">
+                    <div id="div23x" class="card" onclick="flip('23')">
                         <div class="card_face card_face_front"></div>
                         <div class="card_face card_face_back">
                             <a href="music.html">Music</a>
@@ -138,7 +144,7 @@
             <div class="div3">
                 <div class="div31"></div>
                 <div class="div32 scene">
-                    <div class="div32x card">
+                    <div id="div32x" class="card" onclick="flip('32')">
                         <div class="card_face card_face_front"></div>
                         <div class="card_face card_face_back">
                             <a href="cooking.html">Cooking</a>
@@ -150,7 +156,7 @@
             </div>
             <div class="div4">
                 <div class="div41 scene">
-                    <div class="div41x card">
+                    <div id="div41x" class="card" onclick="flip('41')">
                         <div class="card_face card_face_front"></div>
                         <div class="card_face card_face_back">
                             <a href="hiking.html">Hiking</a>
@@ -169,5 +175,7 @@
                 </p>
             </div>
         </footer>
+
+        
     </body>
 </html>
