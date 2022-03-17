@@ -14,9 +14,9 @@
             }
             div {
                 display: inline-block;
+                box-sizing: border-box;
             }
             .div1, .div2, .div3, .div4 {
-                box-sizing: border-box;
                 width: 100vw;
                 height: 22vh;
                 margin-top: 0.5vh;
@@ -29,51 +29,59 @@
             .div42, .div43, .div44 {
                 display: none; /* small-screen view */
             }
-            .div14, .div23, .div32, .div41 {
+            .scene {
                 width: 50vw;
                 height: 22vh;
                 margin: 0 25vw;
-                border: 1pt solid gray;
-                background-color: rgba(255, 228, 196, 0.7);
+                perspective: 600px;
             }
-            .div14 {
+            .card {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transition: transform 1.5s;
+                transform-style: preserve-3d;
+            }
+            .card_face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+            }
+            .div14x > .card_face_front {
                 background-image: url('assets/imgs/literature.jfif');
                 background-size: cover;
             }
-            .div23 {
+            .div23x > .card_face_front {
                 background-image: url('assets/imgs/music.jfif');
                 background-size: cover;
             }
-            .div32 {
+            .div32x > .card_face_front {
                 background-image: url('assets/imgs/cooking.jfif');
                 background-size: cover;
             }
-            .div41 {
+            .div41x > .card_face_front {
                 background-image: url('assets/imgs/hiking.jpg');
                 background-size: cover;
             }
-            .div14x, .div23x, .div32x, .div41x {
-                width: 42vw;
-                height: 18vh;
-                background-color: rgba(240,248,255,0.7);
-                margin: 2vh;
-                vertical-align: middle;
+            .card_face_back {
+                background-color: rgba(255, 228, 196, 0.7);
+                border: 1pt solid gray;
                 text-align: center;
                 font-family: Lobster;
                 font-size:xx-large;
                 text-shadow: 1px 1px black;
-                transition-property: background-color;
-                transition-duration: .2s;
-                transition-timing-function: linear;
-                
+                transform: rotateY(180deg);
             }
-            .div14x:hover, .div23x:hover, .div32x:hover, .div41x:hover {
-                background-color: rgba(240,248,255,1.0);
+            .card_face_back {
+                line-height: 22vh;
+            }
+            .card:hover {
+                transform: rotateY(180deg);
             }
             div a {
-                font-size: x-large;
                 text-decoration: none;
-                line-height: 18vh;
             }
             @media (min-width: 576px) {
                 .div1, .div2, .div3, .div4 {
@@ -88,23 +96,13 @@
                 .div31, .div32, .div33, .div34,
                 .div41, .div42, .div43, .div44 {
                     display: inline-block;
-                    width: 22vw;
-                    height: 22vh;
+                    width: 23vw;
+                    height: 23vh;
                     margin: 0;
                     padding: 0;
                 }
-                .div14, .div23, .div32, .div41, .div33, .div34, .div43, .div44 {
-                    position: relative;
-                    left: 0px;
-                    top: -12vh;
-                }
-                .div14x, .div23x, .div32x, .div41x {
-                    width: 18vw;
-                    height: 18vh;
-                    margin: 2vh;
-                }
-                div a {
-                    line-height: 18vh;
+                .card_face_back {
+                    line-height: 23vh;
                 }
             }
         </style>
@@ -115,36 +113,48 @@
                 <div class="div11"></div>
                 <div class="div12"></div>
                 <div class="div13"></div>
-                <div class="div14">
-                    <div class="div14x">
-                        <a href="literature.html">Literature</a>
+                <div class="div14 scene">
+                    <div class="div14x card">
+                        <div class="card_face card_face_front"></div>
+                        <div class="card_face card_face_back">
+                            <a href="literature.html">Literature</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="div2">
                 <div class="div21"></div>
                 <div class="div22"></div>
-                <div class="div23">
-                    <div class="div23x">
-                        <a href="music.html">Music</a>
+                <div class="div23 scene">
+                    <div class="div23x card">
+                        <div class="card_face card_face_front"></div>
+                        <div class="card_face card_face_back">
+                            <a href="music.html">Music</a>
+                        </div>
                     </div>
                 </div>
                 <div class="div24"></div>
             </div>
             <div class="div3">
                 <div class="div31"></div>
-                <div class="div32">
-                    <div class="div32x">
-                        <a href="cooking.html">Cooking</a>
+                <div class="div32 scene">
+                    <div class="div32x card">
+                        <div class="card_face card_face_front"></div>
+                        <div class="card_face card_face_back">
+                            <a href="cooking.html">Cooking</a>
+                        </div>
                     </div>
                 </div>
                 <div class="div33"></div>
                 <div class="div34"></div>
             </div>
             <div class="div4">
-                <div class="div41">
-                    <div class="div41x">
-                        <a href="hiking.html">Hiking</a>
+                <div class="div41 scene">
+                    <div class="div41x card">
+                        <div class="card_face card_face_front"></div>
+                        <div class="card_face card_face_back">
+                            <a href="hiking.html">Hiking</a>
+                        </div>
                     </div>
                 </div>
                 <div class="div42"></div>
