@@ -4,46 +4,42 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="capstone.css"/>
 
         <title>The Life Savor's Club</title>
         <style>
             body {
-                background-color: rgba(92, 92, 92, 0.4);
-                margin-bottom: -8vh;
+                margin-bottom: -10vh;
             }
             footer {
-                height: 8vh;
+                height: 10vh;
             }
-            div {
-                display: inline-block;
-                box-sizing: border-box;
+            #areaContainer {
+                margin-top: 5px;
             }
-            .div1, .div2, .div3, .div4 {
-                width: 100vw;
-                height: 22vh;
-                margin-top: 0.5vh;
-                margin-bottom: 0.5vh;
-                padding: 0;
+            @media screen and (min-width:576px) {
+                #areaContainer {
+                    margin: 15vh auto;
+                }
             }
-            .div11, .div12, .div13,
-            .div21, .div22, .div24,
-            .div31, .div33, .div34,
-            .div42, .div43, .div44 {
-                display: none; /* small-screen view */
+            @media screen and (min-width:768px) {
+                #areaContainer {
+                    margin: 25vh auto;
+                }
             }
             .scene {
-                width: 50vw;
-                height: 22vh;
-                margin: 0 25vw;
+                height: 20vh;
                 perspective: 600px;
             }
             .card {
                 width: 100%;
                 height: 100%;
+                border: 2px solid black;
                 position: relative;
-                transition: transform 1.5s;
+                transition: transform 1s;
                 transform-style: preserve-3d;
             }
             .card_face {
@@ -53,132 +49,109 @@
                 backface-visibility: hidden;
                 -webkit-backface-visibility: hidden;
             }
-            #div14x > .card_face_front {
-                background-image: url('assets/imgs/literature.jfif');
-                background-size: cover;
-            }
-            #div23x > .card_face_front {
-                background-image: url('assets/imgs/music.jfif');
-                background-size: cover;
-            }
-            #div32x > .card_face_front {
-                background-image: url('assets/imgs/cooking.jfif');
-                background-size: cover;
-            }
-            #div41x > .card_face_front {
-                background-image: url('assets/imgs/hiking.jpg');
-                background-size: cover;
-            }
             .card_face_back {
                 background-color: rgba(255, 228, 196, 0.7);
                 border: 1pt solid gray;
                 text-align: center;
                 font-family: Lobster;
-                font-size:xx-large;
+                font-size: x-large;
                 text-shadow: 1px 1px black;
                 transform: rotateY(180deg);
-            }
-            .card_face_back {
-                line-height: 22vh;
-            }
-            .scene:hover {
-                cursor: pointer;
+                line-height: 20vh;
             }
             .card.is-flipped {
                 transform: rotateY(180deg);
             }
-            div a {
+            .card_face a {
                 text-decoration: none;
+                border: 1px solid gray;
+                border-radius: 50%;
+                background-color: rgba(92,92,92,0.4);
+                color: white;
+                padding: 20px;
             }
-            @media (min-width: 576px) {
-                .div1, .div2, .div3, .div4 {
-                    width: 48vw;
-                    height: 47vh;
-                    float: left;
-                    margin: 0;
-                    padding: 0;
-                }
-                .div11, .div12, .div13, .div14,
-                .div21, .div22, .div23, .div24,
-                .div31, .div32, .div33, .div34,
-                .div41, .div42, .div43, .div44 {
-                    display: inline-block;
-                    width: 23vw;
-                    height: 23vh;
-                    margin: 0;
-                    padding: 0;
-                }
-                .card_face_back {
-                    line-height: 23vh;
-                }
+            #divLit > .card_face_front {
+                background-image: url('assets/imgs/literature.jfif');
+                background-size: cover;
+            }
+            #divMus > .card_face_front {
+                background-image: url('assets/imgs/music.jfif');
+                background-size: cover;
+            }
+            #divCoo > .card_face_front {
+                background-image: url('assets/imgs/cooking.jfif');
+                background-size: cover;
+            }
+            #divHik > .card_face_front {
+                background-image: url('assets/imgs/hiking.jpg');
+                background-size: cover;
+            }
+            #siteDescription {
+                margin: 20px auto 10px;
+                padding: 0 5vw;
+                text-align: center;
+                font-family: Lobster;
             }
         </style>
         <script>
             function flip(name) {
-                var card = document.getElementById('div'+name+'x');
+                var card = document.getElementById('div'+name);
                 card.classList.toggle('is-flipped');
             }
         </script>
     </head>
     <body>
         <main>
-            <div class="div1">
-                <div class="div11"></div>
-                <div class="div12"></div>
-                <div class="div13"></div>
-                <div class="div14 scene">
-                    <div id="div14x" class="card" onclick="flip('14')">
-                        <div class="card_face card_face_front"></div>
-                        <div class="card_face card_face_back">
-                            <a href="literature.html">Literature</a>
+            <div class="container" id="areaContainer">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 scene">
+                        <div id="divLit" class="card" onclick="flip('Lit')">
+                            <div class="card_face card_face_front"></div>
+                            <div class="card_face card_face_back">
+                                <a href="literature.html">Literature</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 scene">
+                        <div id="divMus" class="card" onclick="flip('Mus')">
+                            <div class="card_face card_face_front"></div>
+                            <div class="card_face card_face_back">
+                                <a href="music.html">Music</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 scene">
+                        <div id="divCoo" class="card" onclick="flip('Coo')">
+                            <div class="card_face card_face_front"></div>
+                            <div class="card_face card_face_back">
+                                <a href="cooking.html">Cooking</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 scene">
+                        <div id="divHik" class="card" onclick="flip('Hik')">
+                            <div class="card_face card_face_front"></div>
+                            <div class="card_face card_face_back">
+                                <a href="hiking.html">Hiking</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="div2">
-                <div class="div21"></div>
-                <div class="div22"></div>
-                <div class="div23 scene">
-                    <div id="div23x" class="card" onclick="flip('23')">
-                        <div class="card_face card_face_front"></div>
-                        <div class="card_face card_face_back">
-                            <a href="music.html">Music</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="div24"></div>
-            </div>
-            <div class="div3">
-                <div class="div31"></div>
-                <div class="div32 scene">
-                    <div id="div32x" class="card" onclick="flip('32')">
-                        <div class="card_face card_face_front"></div>
-                        <div class="card_face card_face_back">
-                            <a href="cooking.html">Cooking</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="div33"></div>
-                <div class="div34"></div>
-            </div>
-            <div class="div4">
-                <div class="div41 scene">
-                    <div id="div41x" class="card" onclick="flip('41')">
-                        <div class="card_face card_face_front"></div>
-                        <div class="card_face card_face_back">
-                            <a href="hiking.html">Hiking</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="div42"></div>
-                <div class="div43"></div>
-                <div class="div44"></div>
+                <p id="siteDescription">
+                    Hello, and welcome to the Life Savor's Club! This is a site 
+                    designed and built for the Capstone project for the course 
+                    Web Design for Everyone on Coursera.  It’s a website for a 
+                    fictional Life Savor’s Club, which fosters members'  
+                    interests in various areas to appreciate life. To see What
+                    the club offers, <strong>CLICK</strong> on the images
+                    above to find out!
+                </p>
             </div>
         </main>
         <footer>
             <div>
                 <p>
-                    What the website is about:
+                    Description of the website:
                     <a href="readme.pdf">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-file-earmark-pdf" viewBox="0 0 20 20">
                             <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
@@ -189,5 +162,9 @@
                 </p>
             </div>
         </footer>
+
+        <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    
     </body>
 </html>
