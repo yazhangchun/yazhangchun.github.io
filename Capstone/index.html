@@ -41,6 +41,7 @@
                 position: relative;
                 transition: transform 1s;
                 transform-style: preserve-3d;
+                -webkit-transform-style: preserve-3d;
             }
             .card_face {
                 position: absolute;
@@ -56,11 +57,15 @@
                 font-family: Lobster;
                 font-size: x-large;
                 text-shadow: 1px 1px black;
-                transform: rotateY(180deg);
                 line-height: 20vh;
+            }
+            .card_face_back {
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             .card.is-flipped {
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             .card_face a {
                 text-decoration: none;
