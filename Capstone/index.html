@@ -56,24 +56,20 @@
             #divLit > .card_face_front {
                 background-image: url('assets/imgs/literature.jfif');
                 background-size: cover;
-                transform: rotateY(0deg);
-                -webkit-transform: rotateY(0deg);
             }
             #divMus > .card_face_front {
                 background-image: url('assets/imgs/music.jfif');
                 background-size: cover;
-                transform: rotateY(0deg);
-                -webkit-transform: rotateY(0deg);
             }
             #divCoo > .card_face_front {
                 background-image: url('assets/imgs/cooking.jfif');
                 background-size: cover;
-                transform: rotateY(0deg);
-                -webkit-transform: rotateY(0deg);
             }
             #divHik > .card_face_front {
                 background-image: url('assets/imgs/hiking.jpg');
                 background-size: cover;
+            }
+            .card_face_front {
                 transform: rotateY(0deg);
                 -webkit-transform: rotateY(0deg);
             }
@@ -113,6 +109,15 @@
             function flip(name) {
                 var card = document.getElementById('div'+name);
                 card.classList.toggle('is-flipped');
+
+                card = document.querySelector("#div"+name+" > .card_face_back");
+                if (card.style.zIndex=='' || card.style.zIndex=='0') {
+                    card.style.zIndex = '1';
+                }
+                else if (card.style.zIndex == '1') {
+                    card.style.zIndex = '';
+                }
+                alert("zIndex=" + card.style.zIndex);
             }
         </script>
     </head>
