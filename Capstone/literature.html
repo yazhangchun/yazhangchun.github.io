@@ -31,19 +31,19 @@
             #carouselContainer .carousel-inner .carousel-item-prev {
                 display: flex;
             }
-            @media (min-width: 576px) {
-                #carouselContainer .carousel-inner .carousel-item-end.active,
-                #carouselContainer .carousel-inner .carousel-item-next {
-                    transform: translateX(16.67%);
-                }
-                #carouselContainer .carousel-inner .carousel-item-start.active, 
-                #carouselContainer .carousel-inner .carousel-item-prev {
-                    transform: translateX(-16.67%);
-                }
-                #carouselContainer .carousel-item{
-                    justify-content: space-around;
-                }
+            /*@media (min-width: 576px) {*/
+            #carouselContainer .carousel-inner .carousel-item-end.active,
+            #carouselContainer .carousel-inner .carousel-item-next {
+                transform: translateX(16.67%);
             }
+            #carouselContainer .carousel-inner .carousel-item-start.active, 
+            #carouselContainer .carousel-inner .carousel-item-prev {
+                transform: translateX(-16.67%);
+            }
+            #carouselContainer .carousel-item{
+                justify-content: space-around;
+            }
+            /*}*/
             #carouselContainer .carousel-inner .carousel-item-end,
             #carouselContainer .carousel-inner .carousel-item-start { 
                 transform: translateX(0);
@@ -55,45 +55,36 @@
             #carouselContainer .card img{
                 height: 10vh;
             }
+            .carousel-control-prev, .carousel-control-next {
+                opacity: 1.0;
+            }
+            .carousel-control-prev-icon, .carousel-control-next-icon {
+                border: 1px solid gray;
+                border-radius: 50%;
+                background-color: gray;
+            }
             
             /*-- Book Figures --*/
             figcaption {
                 font-family: 'Times New Roman', Times, serif;
             }
             figure a {
-                background-color: rgba(69, 132, 250, 0.986);
+                background-color: rgba(69, 132, 250);
                 text-decoration: none;
                 color: white;
                 padding: 5px;
                 margin: 5px;
-                border-radius: 10%;
+                border-radius: 5%;
                 display: inline-block;
             }
             figure img {
                 max-height: 25vh;
             }
-        </style>
-        <script>
-            function resizeCarousel() {
-                var minPerSlide = 6;
-                if (window.innerWidth < 576) {
-                    minPerSlide = 2;
-                }
-                items = document.querySelectorAll('#carouselContainer .carousel .carousel-item');
-                items.forEach((el) => {
-                    let next = el.nextElementSibling
-                    for (var i=1; i<minPerSlide; i++) {
-                        if (!next) {
-                            // wrap carousel by using first child
-                            next = items[0]
-                        }
-                        let cloneChild = next.cloneNode(true)
-                        el.appendChild(cloneChild.children[0])
-                        next = next.nextElementSibling
-                    }
-                })
+            .row svg {
+                width: 30px;
+                height: 30px;
             }
-        </script>
+        </style>
     </head>
     <body>
         <main>
@@ -129,56 +120,56 @@
                             <div class="carousel-item active" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/ArabianNights.png" class="img-fluid" alt="Arabian Nights">
+                                        <a href="#ArabianNights"><img src="assets/imgs/ArabianNights.png" class="img-fluid" alt="Arabian Nights"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/TheOdyssey.png" class="img-fluid" alt="The Odyssey">
+                                        <a href="#TheOdyssey"><img src="assets/imgs/TheOdyssey.png" class="img-fluid" alt="The Odyssey"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/TaleOfGenji.png" class="img-fluid" alt="The Tale Of Genji">
+                                        <a href="#TaleOfGenji"><img src="assets/imgs/TaleOfGenji.png" class="img-fluid" alt="The Tale Of Genji"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/Ficciones.png" class="img-fluid" alt="Ficciones">
+                                        <a href="#Ficciones"><img src="assets/imgs/Ficciones.png" class="img-fluid" alt="Ficciones"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/DeathAndHorseman.png" class="img-fluid" alt="Death and King's Horseman">
+                                        <a href="#DeathAndKingsHorseman"><img src="assets/imgs/DeathAndHorseman.png" class="img-fluid" alt="Death and King's Horseman"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/Candide.png" class="img-fluid" alt="Candide">
+                                        <a href="#Candide"><img src="assets/imgs/Candide.png" class="img-fluid" alt="Candide"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/EastWestStories.png" class="img-fluid" alt="East,West:Stories">
+                                        <a href="#EastWestStories"><img src="assets/imgs/EastWestStories.png" class="img-fluid" alt="East,West:Stories"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="4000">
                                 <div class="col-md-2 card">
                                     <div class="card-img">
-                                        <img src="assets/imgs/InterpreterOfMaladies.png" class="img-fluid" alt="Interpreter Of Maladies">
+                                        <a href="#InterpreterOfMaladies"><img src="assets/imgs/InterpreterOfMaladies.png" class="img-fluid" alt="Interpreter Of Maladies"></a>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +185,7 @@
                     </div>
                 </div>
             </div>
-            <h1>Arabian Nights</h1>
+            <h1 id="AbrabianNights">Arabian Nights (1001 Nights)</h1>
             <div class="container">
                 <div class="row">
                     <p class="col-sm-8">
@@ -211,37 +202,45 @@
                     </p>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/ArabianNights.png" alt="Arabian Nights"/>
-                        <figcaption>translated by <em>Husain Haddawy</em><br>
+                        <figcaption>Translated by <em>Husain Haddawy</em><br>
                             <a href="https://smile.amazon.com/Arabian-Nights-New-Deluxe/dp/0393331660/">Amazon</a>
                             <a href="https://wwnorton.com/books/9780393331660">Norton Books</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>The Odyssey</h1>
+            <h1 id="TheOdyssey">The Odyssey</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
-                        If the Iliad is the world's greatest war epic, the Odyssey is literature's 
-                        grandest evocation of an everyman's journey through life. Odysseus' 
-                        reliance on his wit and wiliness for survival in his encounters with 
-                        divine and natural forces during his ten-year voyage home to Ithaca 
-                        after the Trojan War is at once a timeless human story and an individual 
-                        test of moral endurance. (From Amazon)
-                    </p>
+                    <div class="col-sm-8">
+                        <p>
+                            If the Iliad is the world's greatest war epic, the Odyssey is literature's 
+                            grandest evocation of an everyman's journey through life. Odysseus' 
+                            reliance on his wit and wiliness for survival in his encounters with 
+                            divine and natural forces during his ten-year voyage home to Ithaca 
+                            after the Trojan War is at once a timeless human story and an individual 
+                            test of moral endurance. (From Amazon)
+                        </p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/TheOdyssey.png" alt="The Odyssey"/>
-                        <figcaption>by <em>Homer</em>, translated by <em>Robert Fagles</em><br>
+                        <figcaption>By <em>Homer</em>, translated by <em>Robert Fagles</em><br>
                             <a href="https://smile.amazon.com/Odyssey-Homer/dp/0140268863/">Amazon</a>
                             <a href="http://www.boyle.kyschools.us/UserFiles/88/The%20Odyssey.pdf">Free PDF</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>The Tale of Genji</h1>
+            <h1 id="TaleOfGenji">The Tale of Genji</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
+                    <div class="col-sm-8">
+                        <p>
                         Written in the eleventh century, this exquisite portrait 
                         of courtly life in medieval Japan is widely celebrated 
                         as the world’s first novel. Genji, the Shining Prince, 
@@ -253,21 +252,27 @@
                         true to the Japanese original while allowing the modern 
                         reader to appreciate it as a contemporary treasure. 
                         (From Amazon)
-                    </p>
+                        </p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/TaleOfGenji.png" alt="The Tale of Genji"/>
-                        <figcaption>by <em>Murasaki Shikibu</em>, translated by <em>Royall Tyler</em><br>
+                        <figcaption>By <em>Murasaki Shikibu</em>. Translated by <em>Royall Tyler</em><br>
                             <a href="https://www.amazon.com/Tale-Genji-Penguin-Classics-Deluxe/dp/014243714X">Amazon</a>
                             <a href="https://archive.org/stream/manga_Genji_Monogatari/The%20Tale%20of%20Genji%20%5BOxford%5D_djvu.txt">Public Version</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>Ficciones</h1>
+            <h1 id="Ficciones">Ficciones</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
-                        Borges sends us on a journey into a 
+                    <div class="col-sm-8">
+                        <p>Borges sends us on a journey into a 
                         compelling, bizarre, and profoundly resonant realm; 
                         we enter the fearful sphere of Pascal’s abyss, the 
                         surreal and literal labyrinth of books, and the 
@@ -278,21 +283,26 @@
                         mirror the precision and potency of his intellect and 
                         inventiveness, his piercing irony, his skepticism, and 
                         his obsession with fantasy.
-                        (From Amazon)
-                    </p>
+                        (From Amazon)</p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/Ficciones.png" alt="Ficciones"/>
-                        <figcaption>by <em>Jorge Luis Borges</em><br>
+                        <figcaption>By <em>Jorge Luis Borges</em><br>
                             <a href="https://www.amazon.com/Ficciones-Jorge-Luis-Borges/dp/0802130305">Amazon</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>Death and the King's Horseman</h1>
+            <h1 id="DeathAndKingsHorseman">Death and the King's Horseman</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
-                        A Nobel Prize-winning playwright's classic tale of tragic
+                    <div class="col-sm-8">
+                        <p>A Nobel Prize-winning playwright's classic tale of tragic
                         decisions in a traditional African culture.
                         Based on events that took place in Oyo, an ancient Yoruba
                         city of Nigeria, in 1946, Wole Soyinka's powerful play 
@@ -305,70 +315,92 @@
                         set for a dramatic climax when Pilkings learns of the 
                         ritual and decides to intervene and Elesin's son arrives 
                         home.
-                        (From Amazon)
-                    </p>
+                        (From Amazon)</p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/DeathAndHorseman.png" alt="Death and the King's Horseman"/>
-                        <figcaption>by <em>Wole Soyinka</em><br>
+                        <figcaption>By <em>Wole Soyinka</em><br>
                             <a href="https://www.amazon.com/Death-Kings-Horseman-Wole-Soyinka/dp/0393322998">Amazon</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>Candide</h1>
+            <h1 id="Candide">Candide</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
-                        Candide is Voltaire's 1759 satirical masterpiece, wreaking 
+                    <div class="col-sm-8">
+                        <p>Candide is Voltaire's 1759 satirical masterpiece, wreaking 
                         havoc on the excesses of 18th century French Enlightenment 
                         culture. The story begins with our protagonist Candide, a 
                         young man living a sheltered life in an Edenic paradise and 
                         being indoctrinated with Leibnizian optimism by his mentor, 
                         Professor Pangloss. This idyllic life is abruptly interrupted, 
                         however, by a series of painfully disillusioning events that 
-                        set him off on a wide-ranging journey. (From Amazon)
-                    </p>
+                        set him off on a wide-ranging journey. (From Amazon)</p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/Candide.png" alt="Candide"/>
-                        <figcaption>by <em>Voltaire</em><br>
+                        <figcaption>By <em>Voltaire</em><br>
                             <a href="https://smile.amazon.com/Candide-Voltaire/dp/1087113490">Amazon</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>East, West: Stories</h1>
+            <h1 id="EastWestStories">East, West: Stories</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
-                        From the Booker Prize-winning author of The Satanic Verses 
+                    <div class="col-sm-8">
+                        <p>From the Booker Prize-winning author of The Satanic Verses 
                         comes nine stories that reveal the oceanic distances and 
                         the unexpected intimacies between East and West. Daring, 
                         extravagant, comical and humane, this book renews Rushdie's 
                         stature as a storyteller who can enthrall and instruct us 
-                        with the same sentence.(From Amazon)
-                    </p>
+                        with the same sentence.(From Amazon)</p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/EastWestStories.png" alt="East,West:Stories"/>
-                        <figcaption>by <em>Salman Rushdie</em><br>
+                        <figcaption>By <em>Salman Rushdie</em><br>
                             <a href="https://www.amazon.com/East-West-Stories-Salman-Rushdie/dp/0679757899">Amazon</a>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <h1>Interpreter of Maladies</h1>
+            <h1 id="InterpreterOfMaladies">Interpreter of Maladies</h1>
             <div class="container">
                 <div class="row">
-                    <p class="col-sm-8">
-                        Winner of the Pulitzer Prize for fiction, this stunning 
+                    <div class="col-sm-8">
+                        <p>Winner of the Pulitzer Prize for fiction, this stunning 
                         debut collection unerring charts the emotional journeys 
                         of characters seeking love beyond the barriers of nations 
                         and generations. In stories that travel from India to 
                         America and back again, Lahiri speaks with universal 
                         eloquence to everyone who has ever felt like a foreigner.
-                    </p>
+                        (From Amazon)
+                        </p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="gray" class="bi bi-arrow-up-circle" viewBox="0 0 30 30">
+                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                            </svg>
+                        </a>
+                    </div>
                     <figure class="col-sm-4">
                         <img class="img-fluid img-thumbnail" src="assets/imgs/InterpreterOfMaladies.png" alt="Interpreter of Maladies"/>
-                        <figcaption>by <em>Jhumpa Lahiri</em><br>
+                        <figcaption>By <em>Jhumpa Lahiri</em><br>
                             <a href="https://www.amazon.com/Interpreter-Maladies-Jhumpa-Lahiri/dp/039592720X">Amazon</a>
                         </figcaption>
                     </figure>
