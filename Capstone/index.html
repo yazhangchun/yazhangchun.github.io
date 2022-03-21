@@ -43,8 +43,8 @@
                 transform-style: preserve-3d;
                 -webkit-transform-style: preserve-3d;
 
-                -webkit-transition: all 1s ease-in-out;
-                transition: all 1s ease-in-out;
+                -webkit-transition: -webkit-transform 1s ease-in-out;
+                transition: transform 1s ease-in-out;
             }
             .card_face {
                 position: absolute;
@@ -71,8 +71,8 @@
                 background-size: cover;
             }
             .card_face_front {
-                transform: rotateY(0deg);
-                -webkit-transform: rotateY(0deg);
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
                 border: 2px solid black;
             }
             .card_face_back {
@@ -84,8 +84,8 @@
                 text-shadow: 1px 1px black;
                 line-height: 20vh;
 
-                transform: rotateY(180deg);
-                -webkit-transform: rotateY(180deg);
+                transform: rotateY(0deg);
+                -webkit-transform: rotateY(0deg);
             }
             .card.is-flipped {
                 transform: rotateY(180deg);
@@ -108,18 +108,25 @@
             }
         </style>
         <script>
+            var state = 'front';
             function flip(name) {
                 var card = document.getElementById('div'+name);
                 card.classList.toggle('is-flipped');
                 
-                /* card = document.querySelector("#div"+name+" > .card_face_back");
-                if (card.style.zIndex=='' || card.style.zIndex=='0') {
-                    card.style.zIndex = '1';
+                var front_card = document.querySelector("#div" + name + " > .card_face_front");
+                var back_card = document.querySelector("#div" + name + " > .card_face_back");
+                if (state == 'front') {
+                    front_card.style.zIndex = "-1";
+                    back_card.style.zIndex = "1";
+                    state = 'back';
                 }
-                else if (card.style.zIndex == '1') {
-                    card.style.zIndex = '';
+                else if (state == 'back') {
+                    front_card.style.zIndex = "1";
+                    back_card.style.zIndex = "-1";
+                    state = 'front';
                 }
-                alert("zIndex=" + card.style.zIndex); */
+
+                // alert("zIndex=" + card.style.zIndex);
             }
         </script>
     </head>
