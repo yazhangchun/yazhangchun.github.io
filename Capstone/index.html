@@ -71,8 +71,8 @@
                 background-size: cover;
             }
             .card_face_front {
-                transform: rotateY(180deg);
-                -webkit-transform: rotateY(180deg);
+                transform: rotateY(0deg);
+                -webkit-transform: rotateY(0deg);
                 border: 2px solid black;
             }
             .card_face_back {
@@ -84,8 +84,8 @@
                 text-shadow: 1px 1px black;
                 line-height: 20vh;
 
-                transform: rotateY(0deg);
-                -webkit-transform: rotateY(0deg);
+                transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             .card.is-flipped {
                 transform: rotateY(180deg);
@@ -113,7 +113,7 @@
                 var card = document.getElementById('div'+name);
                 card.classList.toggle('is-flipped');
                 
-                var front_card = document.querySelector("#div" + name + " > .card_face_front");
+                /* var front_card = document.querySelector("#div" + name + " > .card_face_front");
                 var back_card = document.querySelector("#div" + name + " > .card_face_back");
                 if (state == 'front') {
                     front_card.style.zIndex = "-1";
@@ -124,8 +124,7 @@
                     front_card.style.zIndex = "1";
                     back_card.style.zIndex = "-1";
                     state = 'front';
-                }
-
+                } */
                 // alert("zIndex=" + card.style.zIndex);
             }
         </script>
@@ -173,8 +172,12 @@
                     Web Design for Everyone on Coursera.  It’s a website for a 
                     fictional Life Savor’s Club, which fosters members'  
                     interests in various areas to appreciate life. To see What
-                    the club offers, <strong>CLICK</strong> on the images
-                    above to find out!
+                    the club offers, CLICK on the cards
+                    above to find out! <strong>Note</strong>: if you are viewing 
+                    with Safari, there is a known issue that, once the card stops
+                    flipping, the card surface disappears until it flips again.
+                    Therefore Browsers other than Safari (Chrome, Edge, Firefox)
+                    are recommended.
                 </p>
             </div>
         </main>
