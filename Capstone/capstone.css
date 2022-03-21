@@ -34,6 +34,9 @@ footer a {
     text-decoration: none;
     color: white;
 }
+footer a:hover {
+    color:rgb(255, 196, 0);
+}
 .navbar {
     display: flex;
     background-color: rgb(54,85,54);
